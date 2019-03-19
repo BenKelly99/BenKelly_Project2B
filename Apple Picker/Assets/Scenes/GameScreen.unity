@@ -1378,7 +1378,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Audio Settings
+  m_Text: 'Audio Settings  '
 --- !u!222 &909188237
 CanvasRenderer:
   m_ObjectHideFlags: 0
