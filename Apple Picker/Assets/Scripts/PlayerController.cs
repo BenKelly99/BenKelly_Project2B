@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     public void ChangeHp(int deltaHp) {
         hp += deltaHp;
         if (hp <= 0)
-            gfc.NewGame();
+            gfc.EndGame();
         hp = Mathf.Min(maxHp, hp);
         if(deltaHp < 0)
             sfxSource.PlayOneShot(missClip);
@@ -68,6 +68,8 @@ public class PlayerController : MonoBehaviour
             ChangeHp(1);
         }
     }
+
+    public int GetScore() { return score; }
 
     public void ChangeSpeed(float deltaSpeed) { currSpeed += deltaSpeed; }
 
