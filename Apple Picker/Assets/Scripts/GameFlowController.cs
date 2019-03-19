@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameFlowController : MonoBehaviour
 {
@@ -45,6 +46,23 @@ public class GameFlowController : MonoBehaviour
     
     public int GetScoreThresh() {
         return 5 * level * (level + 9);
+    }
+
+    public void EndGame()
+    {
+        List<int> scores = new List<int>();
+        for(int i = 0; i < 10; i++)
+        {
+            scores.Add(PlayerPrefs.GetInt("score" + i));
+        }
+        scores.Add(player.GetComponent<PlayerController>().GetScore());
+        scores.Sort();
+        for(int i = 10; i > 0; i--)
+        {
+            PlayerPrefs.SetInt("score" + (10-i), scores[i]);
+            print("score" + (10 - i) + "  " + scores[i]);
+        }
+        SceneManager.LoadScene("EndScreen");
     }
 
     public void NewGame()
