@@ -17,7 +17,7 @@ public class ApplicationManager : MonoBehaviour
             {
                 highScoresText.GetComponent<Text>().text += (i + 1) + ". " + PlayerPrefs.GetInt("score" + i) + "\n";
             }
-            highScoresText.SetActive(false);
+            highScoresText.SetActive(highScore == null);
         }
         if(newGame != null)
             newGame.SetActive(true);
