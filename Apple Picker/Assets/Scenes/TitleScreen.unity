@@ -1044,7 +1044,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is where the high scores go
+  m_Text: High Scores
 --- !u!222 &1557667695
 CanvasRenderer:
   m_ObjectHideFlags: 0
